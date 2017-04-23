@@ -1,4 +1,4 @@
-package myPackage;
+package personajes;
 
 public class Renegado extends Personaje{
 

@@ -4,12 +4,12 @@ public abstract class Arma {
 
 	protected int cantBalas;
 	protected int maxBalas;
-	protected int daño;
+	protected int daÃ±o;
 	protected double alcance;
 
-	// public Arma(int maxBalas, int daño, double alcance) {
+	// public Arma(int maxBalas, int daï¿½o, double alcance) {
 	// this.maxBalas = maxBalas;
-	// this.daño = daño;
+	// this.daï¿½o = daï¿½o;
 	// this.alcance = alcance;
 	// }
 
@@ -19,15 +19,22 @@ public abstract class Arma {
 	}
 
 	public boolean restarBala() {
-		if (this.cantBalas > 0) {
-			this.cantBalas--;
-			return true;
-		}
-		return false;
+		if (this.cantBalas <= 0)
+			return false;
+		
+		this.cantBalas--;
+		return true;
 	}
 
 	public double getAlcance() {
 		return this.alcance;
 	}
-
+	
+	public int getDaÃ±o(){
+		return this.daÃ±o;
+	}
+	
+	public boolean esDisparable(){
+		return true;
+	}
 }

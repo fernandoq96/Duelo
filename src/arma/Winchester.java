@@ -6,7 +6,7 @@ public class Winchester extends Arma {
 
 	public Winchester() {
 		this.cantBalas = 2;
-		this.daño = 3;
+		this.daÃ±o = 3;
 		this.alcance = 4;
 	}
 
@@ -18,7 +18,21 @@ public class Winchester extends Arma {
 		}
 	}
 	
-	public boolean disparable()
+	@Override
+	public boolean restarBala() {
+		if(this.recargo){
+			this.recargo = false;
+			return false;
+		}
+		if (this.cantBalas <= 0)
+			return false;
+		
+		this.cantBalas--;
+		return true;
+	}
+	
+	@Override
+	public boolean esDisparable()
 	{
 		return !(this.recargo);
 	}
