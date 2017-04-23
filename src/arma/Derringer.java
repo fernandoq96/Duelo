@@ -6,7 +6,7 @@ public class Derringer extends Arma {
 
 	public Derringer() {
 		this.cantBalas = 2;
-		this.daño = 1;
+		this.daÃ±o = 1;
 		this.alcance = 1.5;
 	}
 
@@ -17,6 +17,18 @@ public class Derringer extends Arma {
 		if(this.cantBalas != this.maxBalas)
 			this.cantBalas = this.maxBalas;
 		}
+	}
+	
+	@Override
+	public boolean restarBala() {
+		if (DISPAROS_MAX == cantDisparos) 
+			return false;
+		if (this.cantBalas <= 0)
+			return false;
+		
+		this.cantBalas--;
+		this.cantDisparos++;
+		return true;
 	}
 
 }
